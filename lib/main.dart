@@ -7,12 +7,12 @@ import 'package:first_app/gradient_container.dart';
 void main() {
 //executing a function
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
         //backgroundColor: Color.fromARGB(255, 103, 44, 186),
         body: GradientContainer(
-          Color.fromARGB(255, 34, 4, 86),
-          Color.fromARGB(255, 11, 244, 162),
+          const Color.fromARGB(255, 34, 4, 86),
+          const Color.fromARGB(255, 11, 244, 162),
         ),
       ),
     ),
