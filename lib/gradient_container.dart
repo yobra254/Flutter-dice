@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 //import 'package:first_app/style_text.dart';
+import 'package:first_app/dice_roller.dart';
+
+//stateful widget are useful when the change in data in it is going to affect the UI i.e when data changes UI changes
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  GradientContainer(this.color1, this.color2, {super.key});
+  const GradientContainer(this.color1, this.color2, {super.key});
 
   final Color color1;
   final Color color2;
-
-  var activeDiceImage = 'assets/images/dice-5.png';
-
-  void rollDice() {
-    activeDiceImage = 'assets/images/dice-4.png';
-    print('Changing Image..........');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,30 +25,7 @@ class GradientContainer extends StatelessWidget {
       ),
       child: Center(
         //child: StyleText('Hello World!!'),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/images/dice-5.png',
-              width: 200,
-            ),
-            const SizedBox(
-              //insert height betwn picture and button
-              height: 20,
-            ),
-            TextButton(
-              onPressed: rollDice,
-              style: TextButton.styleFrom(
-                // padding: const EdgeInsets.only(top: 20),
-                foregroundColor: Colors.white,
-                textStyle: const TextStyle(
-                  fontSize: 28,
-                ),
-              ),
-              child: const Text('Roll Dice'),
-            )
-          ],
-        ),
+        child: DiceRoller(),
       ),
     );
     //throw UnimplementedError();
